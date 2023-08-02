@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { NearChargersComponent } from './near-chargers/near-chargers.component';
-import { MapComponent } from './map/map.component';
+import { NearChargersComponent } from './components/near-chargers/near-chargers.component';
+import { MapComponent } from './components/map/map.component';
 
 const routes: Routes = [
   { path: 'near-chargers', component: NearChargersComponent },

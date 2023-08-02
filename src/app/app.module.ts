@@ -8,8 +8,8 @@ import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http'; // Add this line
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NearChargersComponent } from './near-chargers/near-chargers.component';
-import { MapComponent } from './map/map.component';
+import { NearChargersComponent } from './components/near-chargers/near-chargers.component';
+import { MapComponent } from './components/map/map.component';
 
 @NgModule({
   declarations: [AppComponent, NearChargersComponent, MapComponent],

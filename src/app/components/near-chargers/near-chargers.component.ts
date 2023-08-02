@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { TeslaChargeStateService } from '../service/tesla-ChargeState.service';
+import { TeslaChargeStateService } from '../../service/tesla-ChargeState.service';
 import { interval, Subscription } from 'rxjs';
 
 declare const google: any;
