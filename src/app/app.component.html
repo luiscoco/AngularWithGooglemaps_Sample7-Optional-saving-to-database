@@ -1,2 +1,16 @@
-<h1>My Angular App</h1>
-<app-map></app-map>
+<mat-sidenav-container>
+    <mat-sidenav mode="side" opened>
+        <mat-nav-list>
+            <a mat-list-item routerLink="/login">Login page</a>
+            <a mat-list-item routerLink="/map-component">Map Component</a>
+            <a mat-list-item routerLink="/near-chargers">NearChargers</a>
+            <a mat-list-item routerLink="/super-chargers">SuperChargers</a>
+            <a mat-list-item routerLink="/destination-chargers">Destination Chargers</a>
+            <!-- Add other menu options here -->
+        </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>
