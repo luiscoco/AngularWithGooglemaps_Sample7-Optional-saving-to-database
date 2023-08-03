@@ -76,7 +76,7 @@ export class LoginComponent implements OnInit {
         .getTokenAfterLogin(this.codeverifier, this.redirectUrl)
         .subscribe(
           (data) => {
-            this.accessToken = data.access_token;
+            this.accessToken = data.accessToken;
           },
           (error) => {
             console.error('Error fetching access token:', error);

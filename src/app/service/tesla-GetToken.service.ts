@@ -10,17 +10,21 @@ export class TeslaGetTokenService {
 
   constructor(private http: HttpClient) {}
 
-  getTokenAfterLogin(codeVerifier: string, redirectUrl: string): Observable<any> {
-    const body = {
-      codeverifier: codeVerifier,
-      redirectUrl: redirectUrl,
-    };
-
+  getTokenAfterLogin(
+    codeVerifier: string,
+    redirectUrl: string
+  ): Observable<any> {
     // Set the headers for the POST request
     const headers = new HttpHeaders({
-      'Content-Type': 'application/json',
+      accept: '*/*',
     });
 
-    return this.http.post(this.apiUrl, body, { headers });
+    // Create the URL with query parameters
+    const url = `${this.apiUrl}?codeverifier=${encodeURIComponent(
+      codeVerifier
+    )}&redirectUrl=${encodeURIComponent(redirectUrl)}`;
+
+    // Make the HTTP POST request with an empty request body
+    return this.http.post<any>(url, {}, { headers });
   }
 }
