@@ -21,6 +21,7 @@ import { ChargingCommandsComponent } from './components/charging-commands/chargi
 import { MediaCommandsComponent } from './components/media-commands/media-commands.component';
 import { ClimateCommandsComponent } from './components/climate-commands/climate-commands.component';
 import { ChargeStateComponent } from './components/charge-state/charge-state.component';
+import { DriveStateComponent } from './components/drive-state/drive-state.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { ChargeStateComponent } from './components/charge-state/charge-state.com
     MediaCommandsComponent,
     ClimateCommandsComponent,
     ChargeStateComponent,
+    DriveStateComponent,
   ],
   imports: [
     BrowserModule,
