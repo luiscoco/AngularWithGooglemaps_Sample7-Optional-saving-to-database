@@ -2,10 +2,8 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { TeslaChargeStateService } from '../../service/tesla-ChargeState.service';
 import { interval, Subscription } from 'rxjs';
 
-declare const google: any;
-
 @Component({
-  selector: 'app-near-chargers',
+  selector: 'app-charge-state',
   template: `
     <div>
       <h3>CHARGE CONDITIONS</h3>
@@ -240,7 +238,7 @@ declare const google: any;
     `,
   ],
 })
-export class NearChargersComponent implements OnInit, OnDestroy {
+export class ChargeStateComponent implements OnInit, OnDestroy {
   realTimeDriveStateData: any;
   realTimeClimateStateData: any;
   realTimeChargeStateData: any;
