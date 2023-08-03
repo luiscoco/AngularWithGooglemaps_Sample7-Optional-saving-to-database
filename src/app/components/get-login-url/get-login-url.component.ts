@@ -5,21 +5,32 @@ import { TeslaGetTokenService } from '../../service/tesla-GetToken.service';
 @Component({
   selector: 'app-login',
   template: `
-    <button (click)="getLoginUrl()">Go to TESLA Login</button>
+    <div>
+      <p>
+        Press the "Go to TESLA Login" and after entering your "username" and
+        "password" copy the "Callback URL" in the input box below
+      </p>
+    </div>
+    <button (click)="getLoginUrl()">Go to TESLA Login page</button>
 
-    <div *ngIf="codeverifier">
+    <!-- <div *ngIf="codeverifier">
       <h3>Code Verifier:</h3>
       <input type="text" [value]="codeverifier" readonly />
-    </div>
+    </div> -->
 
-    <div>
-      <h3>Callback URL:</h3>
-      <input type="text" [(ngModel)]="redirectUrl" />
+    <div style="display: flex; align-items: center;">
+      <p style="margin-right: 10px;">Callback URL:</p>
+      <input type="text" [(ngModel)]="redirectUrl" style="width: 750px;" />
     </div>
 
     <div *ngIf="codeverifier">
       <button (click)="getTokenAfterLogin()">Get Token after Login</button>
-      <input type="text" [value]="accessToken" readonly />
+      <input
+        type="text"
+        [value]="accessToken"
+        readonly
+        style="width: 750px;"
+      />
     </div>
   `,
 })
