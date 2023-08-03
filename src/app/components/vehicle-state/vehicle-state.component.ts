@@ -145,14 +145,46 @@ declare const google: any;
         Odometer(km)
         {{ this.realTimeVehicleStateData.odometer * 1.60934 }}
       </p>
+      <p>
+        Parsed_Calendar_Support
+        {{ this.realTimeVehicleStateData.parsedCalendarSupport }}
+      </p>
+      <p>
+        Passenger_Front
+        {{ this.realTimeVehicleStateData.passengerFront }}
+      </p>
+      <p>
+        Passenger_Rear
+        {{ this.realTimeVehicleStateData.passengerRear }}
+      </p>
+      <p>
+        Rear_Driver_Window
+        {{ this.realTimeVehicleStateData.rearDriverWindow }}
+      </p>
+      <p>
+        Remote_Start
+        {{ this.realTimeVehicleStateData.remoteStart }}
+      </p>
+      <p>
+        Remote_Start_Enabled
+        {{ this.realTimeVehicleStateData.remoteStartEnabled }}
+      </p>
+      <p>
+        Remote_Start_Supported
+        {{ this.realTimeVehicleStateData.remoteStartSupported }}
+      </p>
+      <p>
+        Rear_Passenger_Window
+        {{ this.realTimeVehicleStateData.rearPassengerWindow }}
+      </p>
+      <p>
+        Rear_Trunk
+        {{ this.realTimeVehicleStateData.rearTrunk }}
+      </p>
 
-      <!--  "parsedCalendarSupport": true, "passengerFront":
-      0, "passengerRear": 0, "rearDriverWindow": 0, "remoteStart": false,
-      "remoteStartEnabled": true, "remoteStartSupported": true,
-      "rearPassengerWindow": 0, "rearTrunk": 0, "santaMode": 0, "sentryMode":
-      false, "sentryModeAvailable": true, "serviceMode": false,
-      "serviceModePlus": false, "smartSummonAvailable": false, "softwareUpdate":
-      { "downloadPercent": 0, "expectedDurationSeconds": 2700, "installPercent":
+      <!-- "santaMode": 0, "sentryMode": false, "sentryModeAvailable": true,
+       "serviceMode": false, "serviceModePlus": false, "smartSummonAvailable": false,
+        "softwareUpdate": { "downloadPercent": 0, "expectedDurationSeconds": 2700, "installPercent":
       1, "status": "", "version": " " }, "speedLimitMode": { "active": false,
       "currentLimitMilesPerHour": 85, "maximumLimitMilesPerHour": 120,
       "minimumLimitMilesPerHour": 50, "pinCodeSet": false },
