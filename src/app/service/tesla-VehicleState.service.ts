@@ -8,7 +8,9 @@ import { Observable } from 'rxjs';
 export class TeslaVehicleStateService {
   private apiUrl = 'https://localhost:7147/TeslaVehicleData/vehicle-state?saveInDataBase=false';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+    
+  }
 
   getRealTimeData(): Observable<any> {
     return this.http.post<any>(this.apiUrl, null);

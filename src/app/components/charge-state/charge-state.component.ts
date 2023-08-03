@@ -6,7 +6,7 @@ import { interval, Subscription } from 'rxjs';
   selector: 'app-charge-state',
   template: `
     <div>
-      <h3>CHARGE CONDITIONS</h3>
+      <h3>CHARGE STATE</h3>
       <p>
         Tesla_Battery_Heater_On:
         {{ realTimeChargeStateData.batteryHeaterOn }}

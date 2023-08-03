@@ -9,7 +9,9 @@ export class TeslaChargingSitesService {
   private apiUrl =
     'https://localhost:7147/TeslaNearCharges/chargers?saveInDataBase=false';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+    
+  }
 
   getRealTimeData(): Observable<any> {
     return this.http.post<any>(this.apiUrl, null);

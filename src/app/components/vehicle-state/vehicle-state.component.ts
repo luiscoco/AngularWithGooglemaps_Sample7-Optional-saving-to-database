@@ -93,15 +93,60 @@ declare const google: any;
         Media_Info_Audio_Volume:
         {{ realTimeVehicleStateData.mediaInfo.audioVolume }}
       </p>
+      <p>
+        Media_Info_Audio_Volume_Increment:
+        {{ realTimeVehicleStateData.mediaInfo.audioVolumeIncrement }}
+      </p>
+      <p>
+        Media_Info_Audio_Volume_Maximum:
+        {{ realTimeVehicleStateData.mediaInfo.audioVolumeMaximum }}
+      </p>
+      <p>
+        Media_Info_Playback_Status:
+        {{ realTimeVehicleStateData.mediaInfo.mediaPlaybackStatus }}
+      </p>
+      <p>
+        Media_Info_Now_Playing_Album:
+        {{ realTimeVehicleStateData.mediaInfo.nowPlayingAlbum }}
+      </p>
+      <p>
+        Media_Info_Now_Playing_Artist:
+        {{ realTimeVehicleStateData.mediaInfo.nowPlayingArtist }}
+      </p>
+      <p>
+        Media_Info_Now_Playing_Duration:
+        {{ realTimeVehicleStateData.mediaInfo.nowPlayingDuration }}
+      </p>
+      <p>
+        Media_Info_Now_Playing_Elapsed:
+        {{ realTimeVehicleStateData.mediaInfo.nowPlayingElapsed }}
+      </p>
+      <p>
+        Media_Info_Now_Playing_Source:
+        {{ realTimeVehicleStateData.mediaInfo.nowPlayingSource }}
+      </p>
+      <p>
+        Media_Info_Now_Playing_Station:
+        {{ realTimeVehicleStateData.mediaInfo.nowPlayingStation }}
+      </p>
+      <p>
+        Media_Info_Now_Playing_Title
+        {{ realTimeVehicleStateData.mediaInfo.nowPlayingTitle }}
+      </p>
+      <p>
+        Media_State_Remote_Control_Enabled
+        {{ realTimeVehicleStateData.mediaState.remoteControlEnabled }}
+      </p>
+      <p>
+        Notifications_Supported
+        {{ realTimeVehicleStateData.notificationsSupported }}
+      </p>
+      <p>
+        Odometer(km)
+        {{ this.realTimeVehicleStateData.odometer * 1.60934 }}
+      </p>
 
-      <!--  "mediaInfo": {
-      "audioVolume": 2.3333, "audioVolumeIncrement": 0.333333,
-      "audioVolumeMaximum": 10.333333, "mediaPlaybackStatus": "Stopped",
-      "nowPlayingAlbum": "", "nowPlayingArtist": "", "nowPlayingDuration": 0,
-      "nowPlayingElapsed": 0, "nowPlayingSource": "13", "nowPlayingStation":
-      "DAB MEMORY", "nowPlayingTitle": "Jeanette - Sorrow" }, "mediaState": {
-      "remoteControlEnabled": true }, "notificationsSupported": true,
-      "odometer": 879.815047, "parsedCalendarSupport": true, "passengerFront":
+      <!--  "parsedCalendarSupport": true, "passengerFront":
       0, "passengerRear": 0, "rearDriverWindow": 0, "remoteStart": false,
       "remoteStartEnabled": true, "remoteStartSupported": true,
       "rearPassengerWindow": 0, "rearTrunk": 0, "santaMode": 0, "sentryMode":
