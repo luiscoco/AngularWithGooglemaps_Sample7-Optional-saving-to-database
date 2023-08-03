@@ -1,28 +1,57 @@
 import { Component, OnInit } from '@angular/core';
 import { TeslaLoginService } from '../../service/tesla-Login.service';
+import { TeslaGetTokenService } from '../../service/tesla-GetToken.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   template: `
-    <button (click)="getLoginUrl()">Get Login URL</button>
-    <p *ngIf="loginUrl">Login URL: {{ loginUrl }}</p>
-    <p>Code Verifier: {{ codeVerifier }}</p>
+    <button (click)="getLoginUrl()">Go to TESLA Login</button>
+
+    <div *ngIf="codeverifier">
+      <h3>Code Verifier:</h3>
+      <input type="text" [value]="codeverifier" readonly />
+    </div>
+
+    <div>
+      <h3>Callback URL:</h3>
+      <input type="text" [(ngModel)]="redirectUrl" />
+    </div>
+
+    <div *ngIf="codeverifier">
+      <button (click)="getTokenAfterLogin()">Get Token after Login</button>
+      <input type="text" [value]="accessToken" readonly />
+    </div>
   `,
 })
 export class LoginComponent implements OnInit {
-  loginUrl!: string;
-  codeVerifier!: string;
+  loginUrl: string = '';
+  codeverifier: string = '';
+  redirectUrl: string = '';
+  accessToken: string = '';
+  codeValue: string = '';
 
-  constructor(private teslaLoginService: TeslaLoginService) {}
+  constructor(
+    private teslaLoginService: TeslaLoginService,
+    private teslaGetTokenService: TeslaGetTokenService,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit() {}
+
+  extractCode(): void {
+    const url = new URL(this.redirectUrl);
+    const params = new URLSearchParams(url.search);
+    this.codeValue = params.get('code') || '';
+  }
 
   getLoginUrl() {
     this.teslaLoginService.getLoginUrl().subscribe(
       (data) => {
-        this.loginUrl = data.login_url; // Assuming the response from the API contains a property "login_url" with the login URL.
-        this.codeVerifier = data.codeVerifier; // Assuming the response from the API contains a property "codeVerifier" with the code verifier.
-        this.openLoginUrlInNewTab(); // Redirect to the login URL in a new tab after obtaining it from the service.
+        this.loginUrl = data.login_url;
+        this.codeverifier = data.codeVerifier;
+        this.openLoginUrlInNewTab();
+        this.copyCodeVerifier();
       },
       (error) => {
         console.error('Error fetching login URL:', error);
@@ -30,11 +59,39 @@ export class LoginComponent implements OnInit {
     );
   }
 
+  copyCodeVerifier() {
+    if (this.codeverifier) {
+      const inputElement = document.createElement('input');
+      inputElement.value = this.codeverifier;
+      document.body.appendChild(inputElement);
+      inputElement.select();
+      document.execCommand('copy');
+      document.body.removeChild(inputElement);
+      alert('Code Verifier copied to clipboard!');
+    }
+  }
+
   openLoginUrlInNewTab() {
-    // Check if the login URL is available
     if (this.loginUrl) {
-      // Open the login URL in a new tab
       window.open(this.loginUrl, '_blank');
+    }
+  }
+
+  getTokenAfterLogin() {
+    if (this.codeverifier && this.redirectUrl) {
+      this.extractCode();
+       console.log('Luis codeverifier' + this.codeverifier);
+       console.log('Luis codeValue' + this.codeValue);
+      this.teslaGetTokenService
+        .exchangeCodeForBearerToken(this.codeverifier, this.codeValue)
+        .subscribe(
+          (data) => {
+            this.accessToken = data.access_token;
+          },
+          (error) => {
+            console.error('Error fetching access token:', error);
+          }
+        );
     }
   }
 }

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms'; // Import FormsModule
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
@@ -51,6 +52,7 @@ import { TeslaLoginService } from '../app/service/tesla-Login.service';
     ClimateStateComponent,
   ],
   imports: [
+    FormsModule,
     BrowserModule,
     BrowserAnimationsModule,
     MatButtonModule,
