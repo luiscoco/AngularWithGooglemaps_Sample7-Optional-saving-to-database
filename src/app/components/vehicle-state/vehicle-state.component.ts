@@ -181,29 +181,196 @@ declare const google: any;
         Rear_Trunk
         {{ this.realTimeVehicleStateData.rearTrunk }}
       </p>
-
-      <!-- "santaMode": 0, "sentryMode": false, "sentryModeAvailable": true,
-       "serviceMode": false, "serviceModePlus": false, "smartSummonAvailable": false,
-        "softwareUpdate": { "downloadPercent": 0, "expectedDurationSeconds": 2700, "installPercent":
-      1, "status": "", "version": " " }, "speedLimitMode": { "active": false,
-      "currentLimitMilesPerHour": 85, "maximumLimitMilesPerHour": 120,
-      "minimumLimitMilesPerHour": 50, "pinCodeSet": false },
-      "summonStandbyModeEnabled": false, "sunRoofPercentOpen": null,
-      "sunRoofState": null, "timestamp": 1691044279427,
-      "tpmsHardWarningFrontLeft": false, "tpmsHardWarningFrontRight": false,
-      "tpmsHardWarningRearLeft": false, "tpmsHardWarningRearRight": false,
-      "tpmsLastSeenPressureTimeFrontLeft": 1691010987,
-      "tpmsLastSeenPressureTimeFrontRight": 1691011016,
-      "tpmsLastSeenPressureTimeRearLeft": 1691011016,
-      "tpmsLastSeenPressureTimeRearRight": 1691010987, "tpmsPressureFrontLeft":
-      3.025, "tpmsPressureFrontRight": 3.075, "tpmsPressureRearLeft": 3,
-      "tpmsPressureRearRight": 3.025, "tpmsRecommendedColdPressureFrontValue":
-      2.9, "tpmsRecommendedColdPressureRearValue": 2.9,
-      "tpmsSoftWarningFrontLeft": false, "tpmsSoftWarningFrontRight": false,
-      "tpmsSoftWarningRearLeft": false, "tpmsSoftWarningRearRight": false,
-      "valetMode": false, "valetPINNeeded": true, "vehicleName": null,
-      "vehicleSelfTestProgress": 0, "vehicleSelfTestRequested": false,
-      "webcamAvailable": false } -->
+      <p>
+        Santa_Mode
+        {{ this.realTimeVehicleStateData.santaMode }}
+      </p>
+      <p>
+        Sentry_Mode
+        {{ this.realTimeVehicleStateData.sentryMode }}
+      </p>
+      <p>
+        Sentry_Mode_Available
+        {{ this.realTimeVehicleStateData.sentryModeAvailable }}
+      </p>
+      <p>
+        Sentry_Mode
+        {{ this.realTimeVehicleStateData.serviceMode }}
+      </p>
+      <p>
+        Sentry_Mode_Plus
+        {{ this.realTimeVehicleStateData.serviceModePlus }}
+      </p>
+      <p>
+        Smart_Summon_Available
+        {{ this.realTimeVehicleStateData.smartSummonAvailable }}
+      </p>
+      <p>
+        Software_Update_Download_Percent
+        {{ this.realTimeVehicleStateData.softwareUpdate.downloadPercent }}
+      </p>
+      <p>
+        Software_Update_Expected_Duration_Seconds
+        {{
+          this.realTimeVehicleStateData.softwareUpdate.expectedDurationSeconds
+        }}
+      </p>
+      <p>
+        Software_Update_Install_Percent
+        {{ this.realTimeVehicleStateData.softwareUpdate.installPercent }}
+      </p>
+      <p>
+        Software_Update_Status
+        {{ this.realTimeVehicleStateData.softwareUpdate.status }}
+      </p>
+      <p>
+        Software_Update_Version
+        {{ this.realTimeVehicleStateData.softwareUpdate.version }}
+      </p>
+      <p>
+        Speed_Limit_Mode_Active
+        {{ this.realTimeVehicleStateData.speedLimitMode.active }}
+      </p>
+      <p>
+        Speed_Limit_Mode_Current_Limit_Miles_Per_Hour
+        {{
+          this.realTimeVehicleStateData.speedLimitMode.currentLimitMilesPerHour
+        }}
+      </p>
+      <p>
+        Speed_Limit_Mode_Maximum_Limit_Miles_Per_Hour
+        {{
+          this.realTimeVehicleStateData.speedLimitMode.maximumLimitMilesPerHour
+        }}
+      </p>
+      <p>
+        Speed_Limit_Mode_Minimum_Limit_Miles_Per_Hour
+        {{
+          this.realTimeVehicleStateData.speedLimitMode.minimumLimitMilesPerHour
+        }}
+      </p>
+      <p>
+        Speed_Limit_Mode_Pin_Code_Set
+        {{ this.realTimeVehicleStateData.speedLimitMode.pinCodeSet }}
+      </p>
+      <p>
+        Summon_Stand_by_Mode_Enabled
+        {{ this.realTimeVehicleStateData.summonStandbyModeEnabled }}
+      </p>
+      <p>
+        Sun_Roof_Percent_Open
+        {{ this.realTimeVehicleStateData.sunRoofPercentOpen }}
+      </p>
+      <p>
+        Sun_Roof_State
+        {{ this.realTimeVehicleStateData.sunRoofState }}
+      </p>
+      <p>
+        timestamp
+        {{ this.realTimeVehicleStateData.timestamp }}
+      </p>
+      <p>
+        Tires_Pressure_Monitoring_System_HardWarning_FrontLeft
+        {{ this.realTimeVehicleStateData.tpmsHardWarningFrontLeft }}
+      </p>
+      <p>
+        Tires_Pressure_Monitoring_System_HardWarning_FrontRight
+        {{ this.realTimeVehicleStateData.tpmsHardWarningFrontRight }}
+      </p>
+      <p>
+        Tires_Pressure_Monitoring_System_HardWarning_RearLeft
+        {{ this.realTimeVehicleStateData.tpmsHardWarningRearLeft }}
+      </p>
+      <p>
+        Tires_Pressure_Monitoring_System_HardWarning_RearRight
+        {{ this.realTimeVehicleStateData.tpmsHardWarningRearRight }}
+      </p>
+      <p>
+        Tires_Pressure_Monitoring_System_LastSeenPressureTime_FrontLeft
+        {{ this.realTimeVehicleStateData.tpmsLastSeenPressureTimeFrontLeft }}
+      </p>
+      <p>
+        Tires_Pressure_Monitoring_System_LastSeenPressureTime_FrontRight
+        {{ this.realTimeVehicleStateData.tpmsLastSeenPressureTimeFrontRight }}
+      </p>
+      <p>
+        Tires_Pressure_Monitoring_System_LastSeenPressureTime_RearLeft
+        {{ this.realTimeVehicleStateData.tpmsLastSeenPressureTimeRearLeft }}
+      </p>
+      <p>
+        Tires_Pressure_Monitoring_System_LastSeenPressureTime_RearRight
+        {{ this.realTimeVehicleStateData.tpmsLastSeenPressureTimeRearRight }}
+      </p>
+      <p>
+        Tires_Pressure_Monitoring_System_Pressure_FrontLeft(bar)
+        {{ this.realTimeVehicleStateData.tpmsPressureFrontLeft }}
+      </p>
+      <p>
+        Tires_Pressure_Monitoring_System_Pressure_FrontRight(bar)
+        {{ this.realTimeVehicleStateData.tpmsPressureFrontRight }}
+      </p>
+      <p>
+        Tires_Pressure_Monitoring_System_Pressure_RearLeft(bar)
+        {{ this.realTimeVehicleStateData.tpmsPressureRearLeft }}
+      </p>
+      <p>
+        Tires_Pressure_Monitoring_System_Pressure_RearRight(bar)
+        {{ this.realTimeVehicleStateData.tpmsPressureRearRight }}
+      </p>
+      <p>
+        Tires_Pressure_Monitoring_System_Recommended_Cold_Pressure_Front_Value(bar)
+        {{
+          this.realTimeVehicleStateData.tpmsRecommendedColdPressureFrontValue
+        }}
+      </p>
+      <p>
+        Tires_Pressure_Monitoring_System_Recommended_Cold_Pressure_Rear_Value(bar)
+        {{ this.realTimeVehicleStateData.tpmsRecommendedColdPressureRearValue }}
+      </p>
+      <p>
+        Tires_Pressure_Monitoring_System_Recommended_Cold_Pressure_Rear_Value(bar)
+        {{ this.realTimeVehicleStateData.tpmsRecommendedColdPressureRearValue }}
+      </p>
+      <p>
+        Tires_Pressure_Monitoring_System_SoftWarning_FrontLeft
+        {{ this.realTimeVehicleStateData.tpmsSoftWarningFrontLeft }}
+      </p>
+      <p>
+        Tires_Pressure_Monitoring_System_SoftWarning_FrontRight
+        {{ this.realTimeVehicleStateData.tpmsSoftWarningFrontRight }}
+      </p>
+      <p>
+        Tires_Pressure_Monitoring_System_SoftWarning_RearLeft
+        {{ this.realTimeVehicleStateData.tpmsSoftWarningRearLeft }}
+      </p>
+      <p>
+        Tires_Pressure_Monitoring_System_SoftWarning_RearRight
+        {{ this.realTimeVehicleStateData.tpmsSoftWarningRearRight }}
+      </p>
+      <p>
+        Valet_Mode
+        {{ this.realTimeVehicleStateData.valetMode }}
+      </p>
+      <p>
+        valet_PIN_Needed
+        {{ this.realTimeVehicleStateData.valetPINNeeded }}
+      </p>
+      <p>
+        vehicle_Name
+        {{ this.realTimeVehicleStateData.vehicleName }}
+      </p>
+      <p>
+        vehicle_Self_Test_Progress
+        {{ this.realTimeVehicleStateData.vehicleSelfTestProgress }}
+      </p>
+      <p>
+        vehicle_Self_Test_Requested
+        {{ this.realTimeVehicleStateData.vehicleSelfTestRequested }}
+      </p>
+      <p>
+        webcam_Available
+        {{ this.realTimeVehicleStateData.webcamAvailable }}
+      </p>
     </div>
   `,
   styles: [
