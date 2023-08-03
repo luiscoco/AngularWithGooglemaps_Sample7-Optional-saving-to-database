@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TeslaLoginService } from '../../service/tesla-Login.service';
 import { TeslaGetTokenService } from '../../service/tesla-GetToken.service';
-import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -29,21 +28,13 @@ export class LoginComponent implements OnInit {
   codeverifier: string = '';
   redirectUrl: string = '';
   accessToken: string = '';
-  codeValue: string = '';
 
   constructor(
     private teslaLoginService: TeslaLoginService,
-    private teslaGetTokenService: TeslaGetTokenService,
-    private route: ActivatedRoute
+    private teslaGetTokenService: TeslaGetTokenService
   ) {}
 
   ngOnInit() {}
-
-  extractCode(): void {
-    const url = new URL(this.redirectUrl);
-    const params = new URLSearchParams(url.search);
-    this.codeValue = params.get('code') || '';
-  }
 
   getLoginUrl() {
     this.teslaLoginService.getLoginUrl().subscribe(
@@ -78,12 +69,11 @@ export class LoginComponent implements OnInit {
   }
 
   getTokenAfterLogin() {
+    console.log('Luis CodeVerifier' + this.codeverifier);
+    console.log('Luis CodeVerifier' + this.redirectUrl);
     if (this.codeverifier && this.redirectUrl) {
-      this.extractCode();
-       console.log('Luis codeverifier' + this.codeverifier);
-       console.log('Luis codeValue' + this.codeValue);
       this.teslaGetTokenService
-        .exchangeCodeForBearerToken(this.codeverifier, this.codeValue)
+        .getTokenAfterLogin(this.codeverifier, this.redirectUrl)
         .subscribe(
           (data) => {
             this.accessToken = data.access_token;
