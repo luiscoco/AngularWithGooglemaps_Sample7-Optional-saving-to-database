@@ -31,13 +31,7 @@ declare const google: any;
       <p>Timestamp: {{ realTimeDriveStateData.timestamp }}</p>
       <p>Timestamp: {{ formattedTimestamp }}</p>
   `,
-  styles: [
-    `
-      #map {
-        height: 100%;
-      }
-    `,
-  ],
+  styles: [],
 })
 export class DriveStateComponent implements OnInit, OnDestroy {
   realTimeDriveStateData: any;

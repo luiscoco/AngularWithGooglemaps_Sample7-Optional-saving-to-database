@@ -15,7 +15,7 @@ import { VehicleConfigComponent } from './components/vehicle-config/vehicle-conf
 import { GuiSettingsComponent } from './components/gui-settings/gui-settings.component';
 import { SuperChargersComponent } from './components/super-chargers/super-chargers.component';
 import { DestinationChargersComponent } from './components/destination-chargers/destination-chargers.component';
-import { GetLoginUrlComponent } from './components/get-login-url/get-login-url.component';
+import { LoginComponent } from './components/get-login-url/get-login-url.component';
 import { GetTokenAfterLoginComponent } from './components/get-token-after-login/get-token-after-login.component';
 import { ChargingCommandsComponent } from './components/charging-commands/charging-commands.component';
 import { MediaCommandsComponent } from './components/media-commands/media-commands.component';
@@ -41,7 +41,7 @@ import { TeslaLoginService } from '../app/service/tesla-Login.service';
     GuiSettingsComponent,
     SuperChargersComponent,
     DestinationChargersComponent,
-    GetLoginUrlComponent,
+    LoginComponent,
     GetTokenAfterLoginComponent,
     ChargingCommandsComponent,
     MediaCommandsComponent,

@@ -5,8 +5,10 @@ import { MapComponent } from './components/map/map.component';
 import { DriveStateComponent } from './components/drive-state/drive-state.component';
 import { VehicleStateComponent } from './components/vehicle-state/vehicle-state.component';
 import { ClimateStateComponent } from './components/climate-state/climate-state.component';
+import { LoginComponent } from './components/get-login-url/get-login-url.component';
 
 const routes: Routes = [
+  { path: 'login', component: LoginComponent },
   { path: 'charge-state', component: ChargeStateComponent },
   { path: 'map-component', component: MapComponent },
   { path: 'drive-state', component: DriveStateComponent },

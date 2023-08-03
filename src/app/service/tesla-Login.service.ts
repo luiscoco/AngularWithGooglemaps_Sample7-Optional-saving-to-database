@@ -10,7 +10,7 @@ export class TeslaLoginService {
 
   constructor(private http: HttpClient) {}
 
-  getLoginURL(): Observable<any> {
-    return this.http.post<any>(this.apiUrl, null);
+  getLoginUrl(): Observable<any> {
+    return this.http.get<any>(this.apiUrl);
   }
 }
