@@ -1,27 +1,76 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { MatButtonModule } from '@angular/material/button';
-import { TeslaHonkHornService } from '../../service/tesla-HonkHornCommand.service';
+import { Component } from '@angular/core';
+import { TeslaHonkHornService } from '../../service/tesla-HonkHorn.service';
 import { TeslaFlashLightsService } from '../../service/tesla-FlashLightsCommand.service';
 import { TeslaRemoteStartService } from '../../service/tesla-RemoteStartCommand.service';
 import { TeslaTriggerHomeLinkService } from '../../service/tesla-TriggerHomeLinkCommand.service';
-
+import { TeslaDoorsUnlockService } from '../../service/tesla-DoorsUnlockCommand.service';
+import { TeslaDoorsLockService } from '../../service/tesla-DoorsLockCommand.service';
 
 
 @Component({
   selector: 'app-honk-horn',
   template: `
-    <button mat-raised-button color="primary" (click)="honkHorn()">
-      Honk Horn
-    </button>
-    <button mat-raised-button color="accent" (click)="flashLights()">
-      Flash Lights
-    </button>
-    <button mat-raised-button color="danger" (click)="remoteStart()">
-      Remote Start
-    </button>
-    <button mat-raised-button color="primary" (click)="triggerHomeLink()">
-      Trigger Home Link
-    </button>
+    <div class="container">
+      <h1>Button Grid Example</h1>
+      <section>
+        <div class="grid-row">
+          <button
+            mat-raised-button
+            color="primary"
+            (click)="honkHorn()"
+            style="margin-right: 10px;"
+          >
+            Honk Horn
+          </button>
+          <span class="spacer"></span>
+          <button mat-raised-button color="primary" (click)="flashLights()">
+            Flash Lights
+          </button>
+          <span class="spacer"></span>
+        </div>
+        <br />
+        <mat-divider></mat-divider>
+        <br />
+        <div class="grid-row">
+          <button
+            mat-raised-button
+            color="primary"
+            (click)="remoteStart()"
+            style="margin-right: 10px;"
+          >
+            Remote Start
+          </button>
+          <span class="spacer"></span>
+          <button mat-raised-button color="primary" (click)="triggerHomeLink()">
+            Trigger Home Link
+          </button>
+          <span class="spacer"></span>
+        </div>
+      </section>
+      <br />
+      <mat-divider></mat-divider>
+      <br />
+      <section>
+        <div class="example-button-row">
+          <button
+            mat-raised-button
+            color="primary"
+            (click)="doorsLock()"
+            style="margin-right: 10px;"
+          >
+            Doors Lock
+          </button>
+          <span class="spacer"></span>
+          <button mat-raised-button color="primary" (click)="doorsUnlock()">
+            Doors Unlock
+          </button>
+          <span class="spacer"></span>
+        </div>
+      </section>
+      <br />
+      <mat-divider></mat-divider>
+      <br />
+    </div>
   `,
   styles: [],
 })
@@ -30,7 +79,9 @@ export class MiscellaneousCommandsComponent {
     private teslaHonkHornService: TeslaHonkHornService,
     private teslaFlashLightsService: TeslaFlashLightsService,
     private teslaRemoteStartService: TeslaRemoteStartService,
-    private teslaTriggerHomeLinkService: TeslaTriggerHomeLinkService
+    private teslaTriggerHomeLinkService: TeslaTriggerHomeLinkService,
+    private teslaDoorsUnlockService: TeslaDoorsUnlockService,
+    private teslaDoorsLockService: TeslaDoorsLockService
   ) {}
 
   honkHorn() {
@@ -81,6 +132,32 @@ export class MiscellaneousCommandsComponent {
       (error: any) => {
         // Handle error if needed
         console.error('Failed to Trigger Home Link', error);
+      }
+    );
+  }
+
+  doorsLock() {
+    this.teslaDoorsLockService.doorsLock().subscribe(
+      () => {
+        // Handle successful response if needed
+        console.log('Trigger Doors Lock request sent successfully.');
+      },
+      (error: any) => {
+        // Handle error if needed
+        console.error('Failed to Doors Lock', error);
+      }
+    );
+  }
+
+  doorsUnlock() {
+    this.teslaDoorsUnlockService.doorsUnlock().subscribe(
+      () => {
+        // Handle successful response if needed
+        console.log('Trigger Doors Unlock request sent successfully.');
+      },
+      (error: any) => {
+        // Handle error if needed
+        console.error('Failed to Doors Unlock', error);
       }
     );
   }
