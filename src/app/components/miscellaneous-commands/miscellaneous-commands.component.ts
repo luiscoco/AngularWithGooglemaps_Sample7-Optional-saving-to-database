@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { TeslaHonkHornService } from '../../service/tesla-HonkHorn.service';
+import { TeslaHonkHornService } from '../../service/tesla-HonkHornCommand.service';
 import { MatButtonModule } from '@angular/material/button';
 
 @Component({
@@ -11,7 +11,7 @@ import { MatButtonModule } from '@angular/material/button';
   `,
   styles: [],
 })
-export class HorkHornCommandsComponent {
+export class MiscellaneousCommandsComponent {
   constructor(private teslaHonkHornService: TeslaHonkHornService) {}
 
   honkHorn() {
