@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { TeslaGUISettingsService } from '../../service/tesla-GUISettings.service copy';
+import { TeslaGUISettingsService } from '../../service/tesla-GUISettings.service';
 import { interval, Subscription } from 'rxjs';
 
 declare const google: any;

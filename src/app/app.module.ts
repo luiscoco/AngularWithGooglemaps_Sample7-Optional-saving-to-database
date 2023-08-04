@@ -31,6 +31,7 @@ import { TeslaClimateStateDataService } from '../app/service/tesla-ClimateState.
 import { TeslaDriveStateService } from '../app/service/tesla-DriveState.service';
 import { TeslaVehicleStateService } from '../app/service/tesla-VehicleState.service';
 import { TeslaLoginService } from '../app/service/tesla-Login.service';
+import { HorkHornCommandsComponent } from './components/hork-horn-commands/hork-horn-commands.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { TeslaLoginService } from '../app/service/tesla-Login.service';
     ChargeStateComponent,
     DriveStateComponent,
     ClimateStateComponent,
+    HorkHornCommandsComponent,
   ],
   imports: [
     FormsModule,

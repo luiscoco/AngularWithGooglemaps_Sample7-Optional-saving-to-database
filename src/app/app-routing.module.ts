@@ -10,6 +10,7 @@ import { SuperChargersComponent } from './components/super-chargers/super-charge
 import { DestinationChargersComponent } from './components/destination-chargers/destination-chargers.component';
 import { VehicleConfigComponent } from './components/vehicle-config/vehicle-config.component';
 import { GuiSettingsComponent } from './components/gui-settings/gui-settings.component';
+import { HorkHornCommandsComponent } from './components/hork-horn-commands/hork-horn-commands.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -22,6 +23,7 @@ const routes: Routes = [
   { path: 'destination-chargers', component: DestinationChargersComponent },
   { path: 'vehicle-config', component: VehicleConfigComponent },
   { path: 'gui-settings', component: GuiSettingsComponent },
+  { path: 'honk-horn', component: HorkHornCommandsComponent },
 ];
 
 @NgModule({
