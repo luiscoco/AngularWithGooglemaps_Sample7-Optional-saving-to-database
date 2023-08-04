@@ -1,9 +1,14 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { TeslaHonkHornService } from '../../service/tesla-HonkHorn.service';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
-  selector: 'hork-horn',
-  template: ` <button (click)="honkHorn()">Honk Horn</button> `,
+  selector: 'app-honk-horn',
+  template: `
+    <button mat-raised-button color="primary" (click)="honkHorn()">
+      Honk Horn
+    </button>
+  `,
   styles: [],
 })
 export class HorkHornCommandsComponent {
