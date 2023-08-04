@@ -289,13 +289,4 @@ export class ChargeStateComponent implements OnInit, OnDestroy {
     const date = new Date(timestamp * 1000); // Convert to milliseconds since JavaScript expects the time in milliseconds
     return date.toLocaleString(); // Change this to the desired format using toLocaleString()
   }
-
-  updateMapMarker(latitude: number, longitude: number): void {
-    // Update the marker position using the provided latitude and longitude
-    if (this.marker) {
-      this.marker.setPosition({ lat: latitude, lng: longitude });
-      console.log('Marker position latitude: ' + latitude);
-      console.log('Marker position longitude' + longitude);
-    }
-  }
 }
