@@ -5,13 +5,17 @@ import { TeslaRemoteStartService } from '../../service/tesla-RemoteStartCommand.
 import { TeslaTriggerHomeLinkService } from '../../service/tesla-TriggerHomeLinkCommand.service';
 import { TeslaDoorsUnlockService } from '../../service/tesla-DoorsUnlockCommand.service';
 import { TeslaDoorsLockService } from '../../service/tesla-DoorsLockCommand.service';
+import { TeslaActuateTrunkService } from '../../service/tesla-ActuateTrunkCommand.service';
 
 
 @Component({
   selector: 'app-honk-horn',
   template: `
     <div class="container">
-      <h1>Button Grid Example</h1>
+      <h3>TESLA Model 3 miscellaneous commands</h3>
+      <br />
+        <mat-divider></mat-divider>
+      <br />
       <section>
         <div class="grid-row">
           <button
@@ -70,18 +74,43 @@ import { TeslaDoorsLockService } from '../../service/tesla-DoorsLockCommand.serv
       <br />
       <mat-divider></mat-divider>
       <br />
+      <section>
+        <div class="example-button-row">
+          <button
+            mat-raised-button
+            color="primary"
+            (click)="actuateTrunk()"
+            style="margin-right: 10px;"
+          >
+            Actuate Trunk
+          </button>
+          <mat-form-field>
+            <mat-label>Trunk Type</mat-label>
+            <mat-select [(ngModel)]="selectedTrunk">
+              <mat-option value="front">Front Trunk</mat-option>
+              <mat-option value="rear">Rear Trunk</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </section>
+      <br />
+      <mat-divider></mat-divider>
+      <br />
     </div>
   `,
   styles: [],
 })
 export class MiscellaneousCommandsComponent {
+  selectedTrunk: 'front' | 'rear' = 'front';
+
   constructor(
     private teslaHonkHornService: TeslaHonkHornService,
     private teslaFlashLightsService: TeslaFlashLightsService,
     private teslaRemoteStartService: TeslaRemoteStartService,
     private teslaTriggerHomeLinkService: TeslaTriggerHomeLinkService,
     private teslaDoorsUnlockService: TeslaDoorsUnlockService,
-    private teslaDoorsLockService: TeslaDoorsLockService
+    private teslaDoorsLockService: TeslaDoorsLockService,
+    private teslaActuateTrunkService: TeslaActuateTrunkService
   ) {}
 
   honkHorn() {
@@ -158,6 +187,19 @@ export class MiscellaneousCommandsComponent {
       (error: any) => {
         // Handle error if needed
         console.error('Failed to Doors Unlock', error);
+      }
+    );
+  }
+
+  actuateTrunk() {
+    this.teslaActuateTrunkService.actuateTrunk(this.selectedTrunk).subscribe(
+      () => {
+        // Handle successful response if needed
+        console.log('Actuate Trunk request sent successfully.');
+      },
+      (error: any) => {
+        // Handle error if needed
+        console.error('Failed to Actuate Trunk', error);
       }
     );
   }
