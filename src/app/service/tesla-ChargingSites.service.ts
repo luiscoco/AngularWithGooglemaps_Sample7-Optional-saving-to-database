@@ -7,13 +7,24 @@ import { Observable } from 'rxjs';
 })
 export class TeslaChargingSitesService {
   private apiUrl =
-    'https://localhost:7147/TeslaNearCharges/chargers?saveInDataBase=false';
+    'https://localhost:7147/TeslaNearCharges/superchargers?saveInDataBase=false';
 
-  constructor(private http: HttpClient) {
-    
-  }
+  constructor(private http: HttpClient) {}
 
-  getRealTimeData(): Observable<any> {
+  getRealTimeData(): Observable<ChargingSite[]> {
     return this.http.post<any>(this.apiUrl, null);
   }
+}
+
+export interface ChargingSite {
+  availableStalls: number;
+  totalStalls: number;
+  siteClosed: boolean;
+  location: {
+    latitude: number;
+    longitude: number;
+  };
+  name: string;
+  type: string;
+  distanceMiles: number;
 }

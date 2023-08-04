@@ -6,6 +6,7 @@ import { DriveStateComponent } from './components/drive-state/drive-state.compon
 import { VehicleStateComponent } from './components/vehicle-state/vehicle-state.component';
 import { ClimateStateComponent } from './components/climate-state/climate-state.component';
 import { LoginComponent } from './components/get-login-url/get-login-url.component';
+import { SuperChargersComponent } from './components/super-chargers/super-chargers.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'drive-state', component: DriveStateComponent },
   { path: 'vehicle-state', component: VehicleStateComponent },
   { path: 'climate-state', component: ClimateStateComponent },
+  { path: 'super-chargers', component: SuperChargersComponent },
 ];
 
 @NgModule({
