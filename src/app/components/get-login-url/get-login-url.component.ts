@@ -13,11 +13,6 @@ import { TeslaGetTokenService } from '../../service/tesla-GetToken.service';
     </div>
     <button (click)="getLoginUrl()">Go to TESLA Login page</button>
 
-    <!-- <div *ngIf="codeverifier">
-      <h3>Code Verifier:</h3>
-      <input type="text" [value]="codeverifier" readonly />
-    </div> -->
-
     <div style="display: flex; align-items: center;">
       <p style="margin-right: 10px;">Callback URL:</p>
       <input type="text" [(ngModel)]="redirectUrl" style="width: 750px;" />
@@ -69,7 +64,6 @@ export class LoginComponent implements OnInit {
       inputElement.select();
       document.execCommand('copy');
       document.body.removeChild(inputElement);
-      alert('Code Verifier copied to clipboard!');
     }
   }
 
