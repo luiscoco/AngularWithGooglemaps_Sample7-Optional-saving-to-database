@@ -26,7 +26,7 @@ import { DriveStateComponent } from './components/drive-state/drive-state.compon
 import { ClimateStateComponent } from './components/climate-state/climate-state.component';
 
 import { TeslaChargeStateService } from '../app/service/tesla-ChargeState.service';
-import { TeslaChargingSitesService } from '../app/service/tesla-ChargingSites.service';
+import { TeslaSuperChargingSitesService } from './service/tesla-SuperChargingSites.service';
 import { TeslaClimateStateDataService } from '../app/service/tesla-ClimateState.service';
 import { TeslaDriveStateService } from '../app/service/tesla-DriveState.service';
 import { TeslaVehicleStateService } from '../app/service/tesla-VehicleState.service';
@@ -64,7 +64,7 @@ import { TeslaLoginService } from '../app/service/tesla-Login.service';
   ],
   providers: [
     TeslaChargeStateService,
-    TeslaChargingSitesService,
+    TeslaSuperChargingSitesService,
     TeslaClimateStateDataService,
     TeslaDriveStateService,
     TeslaVehicleStateService,

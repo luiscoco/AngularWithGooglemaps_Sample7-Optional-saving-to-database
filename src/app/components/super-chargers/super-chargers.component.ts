@@ -1,8 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import {
-  ChargingSite,
-  TeslaChargingSitesService,
-} from '../../service/tesla-ChargingSites.service';
+  SuperChargingSite,
+  TeslaSuperChargingSitesService,
+} from '../../service/tesla-SuperChargingSites.service';
 import { interval, Subscription } from 'rxjs';
 
 declare const google: any;
@@ -29,14 +29,16 @@ declare const google: any;
   styles: [],
 })
 export class SuperChargersComponent implements OnInit, OnDestroy {
-  realTimeSuperChargingSitesData: ChargingSite[] = []; // Initialize as an empty array
+  realTimeSuperChargingSitesData: SuperChargingSite[] = []; // Initialize as an empty array
   isRealTimeDataFetched = false;
   map: any;
   marker: any;
   updateSubscription: Subscription | undefined;
   formattedTimestamp!: string;
 
-  constructor(private teslaChargingSitesService: TeslaChargingSitesService) {}
+  constructor(
+    private teslaSuperChargingSitesService: TeslaSuperChargingSitesService
+  ) {}
 
   ngOnInit() {
     this.startRealTimeUpdates();
@@ -56,8 +58,8 @@ export class SuperChargersComponent implements OnInit, OnDestroy {
   }
 
   fetchRealTimeData(): void {
-    this.teslaChargingSitesService.getRealTimeData().subscribe({
-      next: (data: ChargingSite[]) => {
+    this.teslaSuperChargingSitesService.getRealTimeData().subscribe({
+      next: (data: SuperChargingSite[]) => {
         // Update the type to ChargingSite[]
         this.realTimeSuperChargingSitesData = data;
         this.isRealTimeDataFetched = true;
