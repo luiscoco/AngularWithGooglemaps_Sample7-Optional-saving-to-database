@@ -3,6 +3,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { TeslaHonkHornService } from '../../service/tesla-HonkHornCommand.service';
 import { TeslaFlashLightsService } from '../../service/tesla-FlashLightsCommand.service';
 import { TeslaRemoteStartService } from '../../service/tesla-RemoteStartCommand.service';
+import { TeslaTriggerHomeLinkService } from '../../service/tesla-TriggerHomeLinkCommand.service';
 
 
 
@@ -18,6 +19,9 @@ import { TeslaRemoteStartService } from '../../service/tesla-RemoteStartCommand.
     <button mat-raised-button color="danger" (click)="remoteStart()">
       Remote Start
     </button>
+    <button mat-raised-button color="primary" (click)="triggerHomeLink()">
+      Trigger Home Link
+    </button>
   `,
   styles: [],
 })
@@ -25,7 +29,8 @@ export class MiscellaneousCommandsComponent {
   constructor(
     private teslaHonkHornService: TeslaHonkHornService,
     private teslaFlashLightsService: TeslaFlashLightsService,
-    private teslaRemoteStartService: TeslaRemoteStartService
+    private teslaRemoteStartService: TeslaRemoteStartService,
+    private teslaTriggerHomeLinkService: TeslaTriggerHomeLinkService
   ) {}
 
   honkHorn() {
@@ -63,6 +68,19 @@ export class MiscellaneousCommandsComponent {
       (error: any) => {
         // Handle error if needed
         console.error('Failed to Remote Start', error);
+      }
+    );
+  }
+
+  triggerHomeLink() {
+    this.teslaTriggerHomeLinkService.triggerHomeLink().subscribe(
+      () => {
+        // Handle successful response if needed
+        console.log('Trigger Home Link request sent successfully.');
+      },
+      (error: any) => {
+        // Handle error if needed
+        console.error('Failed to Trigger Home Link', error);
       }
     );
   }
